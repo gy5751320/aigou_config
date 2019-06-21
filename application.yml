@@ -1,18 +1,22 @@
-server:
-  port: 6969
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:7001/eureka
-  instance:
-    prefer-ip-address: true
 spring:
+  profiles:
+    active:
+    - dev
+
+---
+spring:
+  profiles: dev
   application:
-    name: spring-cloud-config-server
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/gy5751320/aigou_config.git  #git文件地址
-          username: gy5751320
-          password: cx5751320
+    name: AIGOU_EMPLOYEE_DEV
+server:
+  port: 6666
+
+---
+
+spring:
+  profiles: test
+  application:
+    name: AIGOU_EMPLOYEE_TEST
+server:
+  port: 5555
+
