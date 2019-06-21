@@ -1,1 +1,31 @@
+spring:
+  profiles:
+    active:
+    - dev
 
+---
+spring:
+  profiles: dev
+  application:
+    name: AIGOU_EMPLOYEE_DEV
+server:
+  port: 6666
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:7001/eureka
+  instance:
+    prefer-ip-address: true  #使用ip注册到注册中心
+---
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:7001/eureka
+  instance:
+    prefer-ip-address: true  #使用ip注册到注册中心
+spring:
+  profiles: test
+  application:
+    name: AIGOU_EMPLOYEE_TEST
+server:
+  port: 5555
