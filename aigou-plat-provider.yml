@@ -17,7 +17,7 @@ server:
   port: 6699
 ---
 spring:
-  profiles: dev
+  profiles: test
   application:
     name: AIGOU_PLAT_TEST
 eureka:
