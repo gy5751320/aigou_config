@@ -27,4 +27,4 @@ eureka:
   instance:
     prefer-ip-address: true
 server:
-  port: 9966
+  port: 99668
